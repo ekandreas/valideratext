@@ -11,26 +11,16 @@ function valideratext(text) {
         init : function(ed, url){
  
             ed.addButton('valideratext', {
-                title : 'Insert Valideratext',
+                title : 'Öppna Valideratext',
                 onclick : function() {
-
-						var txt = ed.getContent();
-                    var sData;
-                    var sDomain = ajaxurl + "?action=valideratext";
-                    sData = "<form name='loginform' id='loginform' action='" + sDomain;
-                    sData = sData + "' method='post' charset='UTF-8' accept-charset='UTF-8'>";
-                    sData = sData + "<input type='submit' name='wp-submit' id='wp-submit' value='valideratext' />";
-                    sData = sData + "<textarea name='validatetext'>" + txt  + "</textarea>";
-                    sData = sData + "</form>";
-                    sData = sData + "<script type='text/javascript'>";
-                    sData = sData + "document.cookie='wordpress_test_cookie=home; expires=Fri, 11 Jul 2009 05:23:14 +0000; path=/';";
-                    sData = sData + "document.loginform.submit();</sc" + "ript>";
-                    OpenWindow=window.open("", "_blank","top=100, left=100, height=730, width=850");
-                    OpenWindow.document.write(sData);
-                    OpenWindow.document.close()
-               },
+									var height = screen.availHeight - 80;
+									var width = 850;
+									var left = screen.availWidth - width - 10;
+									var win = window.open(ajaxurl + "?action=valideratext&ed=" + ed.name, 'WordPress02ValidateWindow', 'top=0,left=' + left + ',width=' + width + ',height=' + height + ',toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=1,resizable=1');
+								},
             image: url + "/../images/valideratext.png"
-        });
+		        });
+
     }
 });
  

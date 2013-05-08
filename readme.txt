@@ -42,6 +42,9 @@ Använd funktionen i din redigerare, det är en egen knapp för funktionen.
 
 == Changelog ==
 
+= 1.0 =
+* Rewrite to Valideratext API version 3.
+
 = 0.6 =
 * Internet Explorer fix in editor-js-file
 
