@@ -3,18 +3,16 @@ Contributors: EkAndreas
 Donate link: http://www.flowcom.se/
 Tags: valideratext, editorial support, LIX
 Requires at least: 3.2
-Tested up to: 3.4.2
-Stable tag: 0.6
+Tested up to: 3.5.1
+Stable tag: 1.0
 
 Valideratext.se för WordPress via Flowcom AB
 
 == Description ==
-
 This plugin uses the Swedish service Valideratext.se. Therefore there is no other language support in this description or in the plugin.
-
 - - -
 
-Koppling till valideratext.se för redaktionellt stöd. Valideratext.se hjälper dig att skriva texter som är enkla och lätta att förstå.
+Koppling till valideratext.se (API v3) för redaktionellt stöd. Valideratext.se hjälper dig att skriva texter som är enkla och lätta att förstå.
 
 Du som redaktör och textförfattare i WordPress som verktyg kan behöva stöd i dina textutformningar på webben. Valideratext är en tjänst som du prenumererar på och den hjälper dig på ett smart sätt med det.
 Skriv din text och klicka på knappen i WordPress så kommer texten att valideras och förslag på förbättringar att visas i ett eget fönster.
