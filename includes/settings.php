@@ -105,6 +105,13 @@ class ValideraText_Settings{
 					'type' => 'password',
 					'default' => ''
 				),
+				array(
+					'name' => 'debug',
+					'label' => __( 'Debug?', 'wedevs' ),
+					'desc' => __( 'Vid debug så skickas inte formulär till Valideratext, för felsökning.', 'wedevs' ),
+					'type' => 'checkbox',
+					'default' => ''
+				),
 			),
 		);
 

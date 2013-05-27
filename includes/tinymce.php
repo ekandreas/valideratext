@@ -48,4 +48,4 @@ class ValideraText_TinyMCE {
 
 }
 
-new ValideraText_TinyMCE();
+//new ValideraText_TinyMCE();

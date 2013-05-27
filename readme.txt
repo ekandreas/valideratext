@@ -4,7 +4,7 @@ Donate link: http://www.flowcom.se/
 Tags: valideratext, editorial support, LIX
 Requires at least: 3.2
 Tested up to: 3.5.1
-Stable tag: 1.1
+Stable tag: 2.0
 
 Valideratext.se för WordPress via Flowcom AB
 
@@ -41,6 +41,9 @@ Använd funktionen i din redigerare, det är en egen knapp för funktionen.
 2. Valideratext analyserar din text och ger dig instruktioner och statistik för att öka läsbarhet och förståelse.
 
 == Changelog ==
+
+= 2.0 =
+* Media Button Popup
 
 = 1.1 =
 * Reload project... No new fixes
