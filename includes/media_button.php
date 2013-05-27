@@ -18,8 +18,9 @@ class ValideraText_Media_Button {
 	}
 
 	function media_buttons_context( $context ) {
+		$cache_stamp = date('His');
 		$image_btn = WP_PLUGIN_URL . '/valideratext/images/valideratext.png';
-		$out       = '<a href="#TB_inline?width=400&inlineId=popup_valideratext" class="thickbox button valideratext_button" title=""><img src="' . $image_btn . '" alt="' . __( 'Validera din text', 'valideratext' ) . '" /> Valideratext&nbsp;&nbsp;</a>';
+		$out       = '<a href="#TB_inline?width=900&inlineId=popup_valideratext&cache=' . $cache_stamp . '" class="thickbox button valideratext_button" title=""><img src="' . $image_btn . '" alt="' . __( 'Validera din text', 'valideratext' ) . '" /> Valideratext&nbsp;&nbsp;</a>';
 		return $context . $out;
 	}
 
@@ -68,54 +69,82 @@ class ValideraText_Media_Button {
 
 			<form style="display:none;" target="valideratext_iframe" method="POST" name="valideraform" id="valideraform" action="<?php echo $apiurl; ?>">
 
-				<p>
-					AddInName:<br />
-					<input type="text" name="AddInName" value="<?php echo $addinname; ?>" />
-				</p>
-
-				<p>
-					AddInPublisher:<br />
-					<input type="text" name="AddInPublisher" value="<?php echo $addinpublisher; ?>" />
-				</p>
-
-				<p>
-					AddInVersion:<br />
-					<input type="text" name="AddInVersion" value="<?php echo $addinversion; ?>" />
-				</p>
-
-				<p>
-					ApplicationName:<br />
-					<input type="text" name="ApplicationName" value="<?php echo $applicationname; ?>" />
-				</p>
-
-				<p>
-					ApplicationVersion:<br />
-					<input type="text" name="ApplicationVersion" value="<?php echo $applicationversion; ?>" />
-				</p>
-
-				<p>
-					RawText:<br />
-					<textarea name="RawText" id="rawtext"></textarea>
-				</p>
-
-				<p>
-					UserName:<br />
-					<input type="text" name="UserName" value="<?php echo $username; ?>" />
-				</p>
-
-				<p>
-					UserPassword:<br />
-					<input type="password" name="UserPassword" value="<?php echo $userpassword; ?>" />
-				</p>
-
-				<p>
-					<input type="submit" class="button-primary" value="Skicka" />
-				</p>
+				<table class="widefat">
+					<tr>
+						<td>
+							AddInName:
+						</td>
+						<td>
+							<input type="text" name="AddInName" value="<?php echo $addinname; ?>" />
+						</td>
+						<td>
+							AddInPublisher:
+						</td>
+						<td>
+							<input type="text" name="AddInPublisher" value="<?php echo $addinpublisher; ?>" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							AddInVersion:
+						</td>
+						<td>
+							<input type="text" name="AddInVersion" value="<?php echo $addinversion; ?>" />
+						</td>
+						<td>
+							ApplicationName:
+						</td>
+						<td>
+							<input type="text" name="ApplicationName" value="<?php echo $applicationname; ?>" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							ApplicationVersion:
+						</td>
+						<td>
+							<input type="text" name="ApplicationVersion" value="<?php echo $applicationversion; ?>" />
+						</td>
+						<td>
+							RawText:
+						</td>
+						<td>
+							<textarea name="RawText" id="rawtext" rows="10" cols="60"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							UserName:
+						</td>
+						<td>
+							<input type="text" name="UserName" value="<?php echo $username; ?>" />
+						</td>
+						<td>
+							UserPassword:
+						</td>
+						<td>
+							<input type="password" name="UserPassword" value="<?php echo $userpassword; ?>" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+							<input type="submit" class="button-primary" value="Skicka" />
+						</td>
+						<td>
+							Cache:
+						</td>
+						<td>
+							<input type="text" name="cache" value="<?php echo $cache_stamp; ?>" />
+						</td>
+					</tr>
+				</table>
 
 			</form>
 
 			<?php if( $debug ) { ?>
-				<iframe name="valideratext_iframe" width="100%" height="100%" style="margin-left: -15px; margin-top: -2px;"></iframe>
+				<iframe name="valideratext_iframe" width="800px" height="700px" style="margin-left: -15px; margin-top: -2px;"></iframe>
 			<?php } ?>
 
 			<script>
@@ -137,15 +166,16 @@ class ValideraText_Media_Button {
 					tb_position = function() {
 						var tbWindow = $('#TB_window');
 						var width = $(window).width();
-						var H = $(window).height()-50;
-						var W = ( 1000 < width ) ? 1000 : width;
+						var H = $(window).height()-20;
+						var W = ( 940 < width ) ? 940 : width;
 
 						if ( tbWindow.size() ) {
-							tbWindow.width( W - 50 ).height( H - 45 );
-							$('#TB_ajaxContent').width( W - 50 ).height( H - 75 );
+							tbWindow.width( W - 80 ).height( H - 100 );
+							$('#TB_ajaxContent').width( W - 80 ).height( H-140 );
 							tbWindow.css({'margin-left': '-' + parseInt((( W - 50 ) / 2),10) + 'px'});
 							if ( typeof document.body.style.maxWidth != 'undefined' )
-								tbWindow.css({'top':'20px','margin-top':'0'});
+								tbWindow.css({'top':'40px','margin-top':'10','background-color':'#c7c7c7'});
+							$('#TB_ajaxContent').css({'margin-top':'10px','overflow':'hidden'});
 							//$('#TB_title').css({'background-color':'#fff','color':'#cfcfcf'});
 						};
 
